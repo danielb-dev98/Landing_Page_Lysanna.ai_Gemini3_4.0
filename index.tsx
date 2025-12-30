@@ -250,85 +250,52 @@ function Hero({ onJoinWaitlist }: { onJoinWaitlist: () => void }) {
   );
 }
 
-function StatsSection() {
-  return (
-    <div className="w-full border-y border-slate-100 bg-white/50 backdrop-blur-sm relative z-10">
-      <div className="max-w-7xl mx-auto px-6 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-100">
-           <div className="text-center px-4">
-              <div className="text-3xl font-bold text-slate-900 mb-1">2.5h</div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">Ahorradas / día</div>
-           </div>
-           <div className="text-center px-4">
-              <div className="text-3xl font-bold text-slate-900 mb-1">HIPAA</div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">Compliant</div>
-           </div>
-           <div className="text-center px-4">
-              <div className="text-3xl font-bold text-slate-900 mb-1">AES-256</div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">Encriptación</div>
-           </div>
-           <div className="text-center px-4">
-              <div className="text-3xl font-bold text-slate-900 mb-1">100%</div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">Enfoque Clínico</div>
-           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function InvisibleCostSection() {
   return (
-    <section className="py-24 relative z-10">
-       {/* Top Gradient Transition */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"></div>
-
+    <section className="py-40 relative z-10 bg-gradient-to-b from-white via-blue-50/30 to-white">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <RevealOnScroll className="text-center mb-16">
-           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">El coste invisible de documentar</h2>
-           <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        <RevealOnScroll className="text-center mb-24">
+           <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">El coste invisible de documentar</h2>
+           <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-normal">
              La terapia exige presencia total, pero la burocracia clínica te obliga a dividir tu atención.<br className="hidden md:block" /> Ese esfuerzo constante tiene un precio.
            </p>
         </RevealOnScroll>
 
         <div className="grid md:grid-cols-3 gap-8">
            {/* Card 1 */}
-           <RevealOnScroll delay={0} className="bg-red-50/70 backdrop-blur-md p-8 rounded-[2rem] border border-red-100 hover:shadow-xl hover:shadow-red-900/5 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-red-500 mb-6 shadow-sm">
-                 <ProhibitionIcon className="w-6 h-6" />
+           <RevealOnScroll delay={0} className="bg-white p-12 rounded-3xl border border-slate-200/80 shadow-[0_1px_3px_0_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_0_rgba(59,130,246,0.08)] hover:border-blue-200/60 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl flex items-center justify-center text-blue-600 mb-8 shadow-[0_1px_2px_0_rgba(59,130,246,0.1)]">
+                 <ProhibitionIcon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Desconexión en sesión</h3>
-              <p className="text-slate-600 leading-relaxed font-light text-sm md:text-base">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">Desconexión en sesión</h3>
+              <p className="text-slate-600 leading-relaxed font-light text-[15px] md:text-base">
                 "Si tomo notas, me desconecto y el paciente lo nota. Si no las tomo, temo olvidar detalles vitales para su evolución."
               </p>
            </RevealOnScroll>
 
            {/* Card 2 */}
-           <RevealOnScroll delay={100} className="bg-orange-50/70 backdrop-blur-md p-8 rounded-[2rem] border border-orange-100 hover:shadow-xl hover:shadow-orange-900/5 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-orange-500 mb-6 shadow-sm">
-                 <BrainIcon className="w-6 h-6" />
+           <RevealOnScroll delay={100} className="bg-white p-12 rounded-3xl border border-slate-200/80 shadow-[0_1px_3px_0_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_0_rgba(59,130,246,0.08)] hover:border-blue-200/60 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl flex items-center justify-center text-blue-600 mb-8 shadow-[0_1px_2px_0_rgba(59,130,246,0.1)]">
+                 <BrainIcon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Fatiga mental post-sesión</h3>
-              <p className="text-slate-600 leading-relaxed font-light text-sm md:text-base">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">Fatiga mental post-sesión</h3>
+              <p className="text-slate-600 leading-relaxed font-light text-[15px] md:text-base">
                 Terminas el día exhausto, con 6-10 notas pendientes por rehacer en tu cabeza. Te llevas a tus pacientes a casa cada noche.
               </p>
            </RevealOnScroll>
 
            {/* Card 3 */}
-           <RevealOnScroll delay={200} className="bg-yellow-50/70 backdrop-blur-md p-8 rounded-[2rem] border border-yellow-100 hover:shadow-xl hover:shadow-yellow-900/5 transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-yellow-500 mb-6 shadow-sm">
-                 <WarningTriangleIcon className="w-6 h-6" />
+           <RevealOnScroll delay={200} className="bg-white p-12 rounded-3xl border border-slate-200/80 shadow-[0_1px_3px_0_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_0_rgba(59,130,246,0.08)] hover:border-blue-200/60 transition-all duration-500 hover:-translate-y-1">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl flex items-center justify-center text-blue-600 mb-8 shadow-[0_1px_2px_0_rgba(59,130,246,0.1)]">
+                 <WarningTriangleIcon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Inseguridad administrativa</h3>
-              <p className="text-slate-600 leading-relaxed font-light text-sm md:text-base">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">Inseguridad administrativa</h3>
+              <p className="text-slate-600 leading-relaxed font-light text-[15px] md:text-base">
                 Información dispersa en libretas, audios y hojas sueltas. El riesgo de brechas de confidencialidad o errores clínicos te preocupa.
               </p>
            </RevealOnScroll>
         </div>
       </div>
-      
-      {/* Visual separation gradient to bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
     </section>
   );
 }
@@ -348,108 +315,86 @@ function EmotionalResonanceSection() {
       text: "Sostener historias ajenas sin espacio real\npara procesarlas después."
     },
     {
-      title: "Miedo a olvidar lo importante",
-      text: "Un matiz clínico.\nUna emoción sutil.\nUna señal que podría marcar la diferencia."
-    },
-    {
-      title: "Desorden y dispersión",
-      text: "Información repartida entre libretas, audios, documentos y memoria.\nNada centralizado. Nada del todo tranquilo."
-    },
-    {
       title: "Alejarse de la vocación",
       text: "Menos acompañar.\nMás gestionar.\nMás escribir sobre la terapia\nque estar dentro de ella."
     }
   ];
 
   return (
-    <section id="emotional-resonance" className="py-32 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-white to-white relative overflow-hidden z-10">
-      {/* Top transition */}
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
-
-      {/* Decorative ambient background - Subtler, warmer tone for empathy */}
+    <section id="emotional-resonance" className="py-20 md:py-24 bg-gradient-to-b from-white via-blue-50/20 to-white relative overflow-hidden z-10 min-h-screen md:min-h-[100vh] flex items-center">
+      {/* Subtle ambient background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-slate-100/50 rounded-full blur-[120px] opacity-60"></div>
-         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-teal-50/30 rounded-full blur-[100px] opacity-40"></div>
+         <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-blue-50/40 rounded-full blur-[120px] opacity-50"></div>
+         <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-blue-100/30 rounded-full blur-[100px] opacity-40"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
-         {/* Narrative Thread Line (Visual Guide for Scroll) - Enhanced */}
-         <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-200 to-transparent hidden md:block">
-            {/* Thread Nodes */}
-            <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-slate-200"></div>
-            <div className="absolute top-[50%] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-slate-200"></div>
-            <div className="absolute top-[80%] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-slate-200"></div>
-         </div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            {/* Left Column: Visual Anchor - Header Block */}
+            <RevealOnScroll className="relative">
+               <div className="inline-block bg-white px-5 py-2 rounded-full border border-blue-100 mb-8 shadow-sm">
+                  <span className="text-blue-600 font-bold tracking-[0.2em] text-[10px] uppercase flex items-center gap-2">
+                     <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                     La realidad invisible
+                  </span>
+               </div>
+               
+               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8 leading-[1.1] tracking-tight">
+                  El mayor peso del terapeuta<br />
+                  <span className="text-slate-400 font-medium">no es el paciente.</span><br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-600">Es lo que carga después.</span>
+               </h2>
 
-         {/* Header Block */}
-         <RevealOnScroll className="text-center mb-20 relative">
-            <div className="inline-block bg-white px-5 py-2 rounded-full border border-slate-100 mb-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <span className="text-slate-500 font-bold tracking-[0.2em] text-[10px] uppercase flex items-center gap-2">
-                   <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                   La realidad invisible
-                </span>
-            </div>
-            
-            {/* H2 - High Contrast for Emotional Impact */}
-            <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-10 leading-[1.1] tracking-tight">
-               El mayor peso del terapeuta<br />
-               <span className="text-slate-300 font-medium">no es el paciente.</span><br />
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-teal-800">Es lo que carga después.</span>
-            </h2>
+               <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6 font-light bg-white rounded-3xl p-8 md:p-10 border border-blue-100/60 shadow-[0_4px_20px_rgba(59,130,246,0.08)]">
+                  <p className="border-l-4 border-blue-200 pl-6 italic">
+                     "Escuchar con atención plena. Sostener historias difíciles. Recordar cada matiz clínico."
+                  </p>
+                  <p className="font-medium text-slate-800">
+                     Cada sesión deja una huella administrativa.<br />
+                     <span className="text-blue-600">Lysanna está aquí para borrarla.</span>
+                  </p>
+               </div>
 
-            {/* Body Editorial - Human Rhythm */}
-            <div className="text-lg md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto space-y-8 font-light bg-white/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white shadow-xl shadow-slate-200/50">
-               <p className="border-l-4 border-slate-200 pl-6 italic">
-                  "Escuchar con atención plena. Sostener historias difíciles. Recordar cada matiz clínico."
-               </p>
-               <p className="font-medium text-slate-800">
-                  Cada sesión deja una huella administrativa.<br />
-                  <span className="text-teal-600">Lysanna está aquí para borrarla.</span>
-               </p>
-            </div>
-         </RevealOnScroll>
+               {/* Closing statement - moved to left column bottom */}
+               <div className="mt-12 pt-8 border-t border-blue-100">
+                  <p className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+                     No es falta de vocación.<br />
+                     <span className="text-slate-400 italic font-serif">Es exceso de carga.</span>
+                  </p>
+               </div>
+            </RevealOnScroll>
 
-         {/* Grid de dolores - Staggered Layout with Enhanced Cards */}
-         <div className="grid md:grid-cols-2 gap-6 gap-y-12 mb-24">
-            {cards.map((card, idx) => (
-               <RevealOnScroll key={idx} delay={idx * 100} className={`relative group ${idx % 2 !== 0 ? 'md:translate-y-16' : ''}`}>
-                  {/* Connector Line for Desktop */}
-                  <div className={`hidden md:block absolute top-12 h-px w-10 bg-slate-200 transition-all duration-500 group-hover:w-16 group-hover:bg-teal-200 ${idx % 2 === 0 ? '-right-10' : '-left-10'}`}></div>
-
-                  <div className="h-full bg-white p-8 md:p-10 rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 group-hover:border-teal-100/50 relative overflow-hidden">
-                      
-                      {/* Gradient Overlay on Hover */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-teal-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                      {/* Large Watermark Number */}
-                      <div className="absolute -top-4 -right-4 text-[120px] font-display font-bold text-slate-50 select-none group-hover:text-teal-50/50 transition-colors duration-500 leading-none z-0">
-                          {idx + 1}
-                      </div>
-                      
-                      <div className="relative z-10">
-                        <h3 className="text-xl font-bold text-slate-800 mb-4 pr-8 group-hover:text-teal-800 transition-colors">
-                            {card.title}
-                        </h3>
+            {/* Right Column: All Pain Points - Structured Vertical Layout */}
+            <RevealOnScroll delay={100} className="space-y-4">
+               {cards.map((card, idx) => (
+                  <RevealOnScroll key={idx} delay={idx * 80} className="group">
+                     <div className="bg-white p-6 md:p-7 rounded-2xl border border-blue-100/60 shadow-[0_2px_8px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_24px_rgba(59,130,246,0.12)] hover:border-blue-200 transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden">
+                        {/* Subtle gradient overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         
-                        <div className="w-8 h-1 bg-slate-200 rounded-full mb-6 group-hover:bg-teal-400 transition-all duration-500 group-hover:w-12"></div>
-                        
-                        <p className="text-slate-600 leading-relaxed whitespace-pre-line text-lg font-light">
-                            {card.text}
-                        </p>
-                      </div>
-                  </div>
-               </RevealOnScroll>
-            ))}
+                        <div className="relative z-10 flex items-start gap-4">
+                           {/* Number badge */}
+                           <div className="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold text-sm shadow-[0_1px_3px_rgba(59,130,246,0.2)] group-hover:bg-blue-100 transition-colors">
+                              {idx + 1}
+                           </div>
+                           
+                           <div className="flex-1 min-w-0">
+                              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                                 {card.title}
+                              </h3>
+                              
+                              <div className="w-6 h-0.5 bg-blue-200 rounded-full mb-3 group-hover:w-10 group-hover:bg-blue-400 transition-all duration-300"></div>
+                              
+                              <p className="text-slate-600 leading-relaxed whitespace-pre-line text-sm md:text-base font-light">
+                                 {card.text}
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </RevealOnScroll>
+               ))}
+            </RevealOnScroll>
          </div>
-
-         {/* Cierre emocional - Clean & Punchy */}
-         <RevealOnScroll className="text-center relative pt-12">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-slate-200 to-teal-500"></div>
-            <p className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mt-6">
-               No es falta de vocación.<br />
-               <span className="text-slate-400 italic font-serif">Es exceso de carga.</span>
-            </p>
-         </RevealOnScroll>
       </div>
     </section>
   );
@@ -1230,7 +1175,6 @@ function App() {
       <Header onJoinWaitlist={() => setShowSurvey(true)} />
       <main>
         <Hero onJoinWaitlist={() => setShowSurvey(true)} />
-        <StatsSection />
         <InvisibleCostSection />
         <EmotionalResonanceSection />
         <TransformationSection />
