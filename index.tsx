@@ -188,9 +188,8 @@ function Hero({ onJoinWaitlist }: { onJoinWaitlist: () => void }) {
         </h1>
 
         {/* H2 */}
-        <h2 className="animate-fade-in-up [animation-delay:200ms] text-xl md:text-2xl font-medium text-slate-600 mb-10 max-w-2xl leading-relaxed">
-          El burnout del terapeuta no empieza en la sesión.<br className="hidden md:block" />
-          Empieza con las notas, los correos y la carga mental.
+        <h2 className="animate-fade-in-up [animation-delay:200ms] text-2xl md:text-3xl font-bold text-slate-900 mb-10 max-w-3xl leading-tight">
+          Lysanna escucha y escribe por ti, para que tú puedas estar de verdad con tu paciente.
         </h2>
 
         {/* CTA Section - Minimalist & High Conversion */}
@@ -230,6 +229,22 @@ function Hero({ onJoinWaitlist }: { onJoinWaitlist: () => void }) {
            </div>
         </div>
 
+        {/* Floating Benefits Labels */}
+        <div className="animate-fade-in-up [animation-delay:400ms] mt-10 flex flex-wrap justify-center gap-3 md:gap-4">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 backdrop-blur-sm border border-blue-100 rounded-full shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+            <span className="text-sm md:text-base font-semibold text-slate-800">Menos carga mental</span>
+          </div>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 backdrop-blur-sm border border-blue-100 rounded-full shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="w-2 h-2 rounded-full bg-teal-500"></div>
+            <span className="text-sm md:text-base font-semibold text-slate-800">Notas clínicas claras</span>
+          </div>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 backdrop-blur-sm border border-blue-100 rounded-full shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+            <span className="text-sm md:text-base font-semibold text-slate-800">Presencia plena en cada sesión</span>
+          </div>
+        </div>
+
         {/* Floating Icons / Trust Signals - Keeping them low profile as a footer to the hero */}
         <div className="animate-fade-in-up [animation-delay:500ms] mt-24 flex flex-wrap justify-center gap-x-8 gap-y-4 opacity-40 hover:opacity-80 transition-opacity duration-500 grayscale">
            {[
@@ -258,9 +273,12 @@ function InvisibleCostSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <RevealOnScroll className="text-center mb-24">
            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">El coste invisible de documentar</h2>
-           <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-normal">
-             La terapia exige presencia total, pero la burocracia clínica te obliga a dividir tu atención.<br className="hidden md:block" /> Ese esfuerzo constante tiene un precio.
-           </p>
+           <h3 className="text-2xl md:text-3xl font-bold text-slate-900 max-w-3xl mx-auto leading-tight mb-2">
+             El burnout del terapeuta no empieza en la sesión.
+           </h3>
+           <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600 max-w-3xl mx-auto leading-tight">
+             Empieza con las notas, los correos y la carga mental.
+           </h3>
         </RevealOnScroll>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -952,24 +970,46 @@ function PrivacySection() {
 }
 
 function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const faqs = [
     {
-      question: "¿Lysanna graba las sesiones?",
-      answer: "Lysanna procesa el audio en tiempo real para generar las notas y luego lo descarta, a menos que elijas explícitamente guardarlo. Tú tienes el control total."
+      question: "¿Lysanna graba o guarda las sesiones?",
+      answer: "Lysanna procesa el audio para generar tus notas y, por defecto, no lo conserva. Tú decides qué se guarda y qué no. El control es siempre tuyo."
     },
     {
-      question: "¿Es compatible con videollamadas?",
-      answer: "Sí, Lysanna funciona con Zoom, Google Meet, y también para sesiones presenciales mediante el micrófono de tu dispositivo."
+      question: "¿Puedo usar Lysanna sin distraerme durante la sesión?",
+      answer: "Sí. Lysanna está diseñada para trabajar en segundo plano, para que puedas estar plenamente presente con tu paciente."
     },
     {
-      question: "¿Puedo editar las notas generadas?",
-      answer: "Absolutamente. Lysanna crea un borrador que puedes editar, enriquecer y exportar a tu sistema de gestión habitual."
+      question: "¿Las notas que genera se pueden editar?",
+      answer: "Sí. Lysanna crea un borrador clínico que puedes revisar, ajustar y personalizar antes de guardarlo."
     },
     {
-      question: "¿Cuánto costará?",
-      answer: "Estamos en fase beta cerrada. Los primeros usuarios tendrán un precio especial de por vida."
+      question: "¿Esto sustituye mi criterio como terapeuta?",
+      answer: "No. Lysanna no toma decisiones clínicas. Te ayuda a organizar, recordar y ganar claridad, pero el criterio profesional sigue siendo tuyo."
+    },
+    {
+      question: "¿Es adecuada para salud mental y datos sensibles?",
+      answer: "Sí. La privacidad y la seguridad son pilares del producto. Lysanna se construye para ofrecer confianza real en contextos clínicos."
+    },
+    {
+      question: "¿Sirve para sesiones presenciales y online?",
+      answer: "Sí. Lysanna está pensada para adaptarse a la práctica real: sesiones presenciales y sesiones online."
+    },
+    {
+      question: "¿Me ayudará a reducir el agotamiento y la carga mental?",
+      answer: "Ese es el objetivo central. Lysanna reduce la carga administrativa y el ruido mental que provocan desgaste y burnout."
+    },
+    {
+      question: "¿Cuándo podré probar Lysanna y cuánto costará?",
+      answer: "Estamos en acceso inicial. Los primeros profesionales de la lista tendrán acceso prioritario y condiciones especiales."
     }
   ];
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section className="py-16 md:py-20 -mt-16 md:-mt-20 bg-gradient-to-b from-white via-white to-white/95 relative z-10">
@@ -984,9 +1024,32 @@ function FAQSection() {
         <div className="space-y-6">
           {faqs.map((faq, idx) => (
             <RevealOnScroll key={idx} delay={idx * 50}>
-              <div className="border border-slate-200 rounded-2xl p-6 hover:border-teal-200 transition-colors">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{faq.question}</h3>
-                <p className="text-slate-600">{faq.answer}</p>
+              <div className="border border-slate-200 rounded-2xl hover:border-teal-200 transition-colors overflow-hidden">
+                <button
+                  onClick={() => toggleFAQ(idx)}
+                  className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-slate-50/50 transition-colors"
+                >
+                  <h3 className="text-lg font-bold text-slate-900 flex-1">{faq.question}</h3>
+                  <svg
+                    className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 ${
+                      openIndex === idx ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-6 pb-6 pt-0">
+                    <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
               </div>
             </RevealOnScroll>
           ))}
