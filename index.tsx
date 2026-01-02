@@ -203,32 +203,30 @@ function Hero({ onJoinWaitlist }: { onJoinWaitlist: (email: string, name: string
 
            {/* Input & Button */}
            <div className="bg-white p-2 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100">
-             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 <input 
                   type="text" 
                   placeholder="Tu nombre" 
-                  className="w-full px-4 py-3 bg-slate-50 border-0 rounded-xl focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all placeholder:text-slate-400 font-medium text-slate-900 outline-none"
+                  className="w-full px-4 py-3.5 bg-slate-50 border-0 rounded-xl focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all placeholder:text-slate-400 font-medium text-slate-900 outline-none"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <input 
-                    type="email" 
-                    placeholder="tu@consulta.com" 
-                    className="flex-1 px-4 py-3 bg-slate-50 border-0 rounded-xl focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all placeholder:text-slate-400 font-medium text-slate-900 outline-none"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <button 
-                    type="submit"
-                    className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all whitespace-nowrap flex items-center justify-center gap-2"
-                  >
-                    Unirme
-                    <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                  </button>
-                </div>
+                <input 
+                  type="email" 
+                  placeholder="tu@consulta.com" 
+                  className="w-full px-4 py-3.5 bg-slate-50 border-0 rounded-xl focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all placeholder:text-slate-400 font-medium text-slate-900 outline-none"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button 
+                  type="submit"
+                  className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white font-bold text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
+                >
+                  <span>Unirme</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </button>
              </form>
            </div>
 
@@ -389,7 +387,7 @@ function EmotionalResonanceSection() {
                   </p>
                   <p className="font-medium text-slate-800">
                      Cada sesión deja una huella administrativa.<br />
-                     <span className="text-blue-600">Lysanna está aquí para borrarla.</span>
+                     <span className="text-blue-600">Lysanna está aquí para aliviarla.</span>
                   </p>
                </div>
 
@@ -1095,7 +1093,7 @@ function FinalCTA({ onJoinWaitlist }: { onJoinWaitlist: (email: string, name: st
               Estamos construyendo Lysanna de la mano de profesionales como tú. Sé el primero en probar la beta y obtén un 50% de descuento vitalicio.
             </p>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto mb-6">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto mb-6">
               <input
                 type="text"
                 placeholder="Tu nombre"
@@ -1104,27 +1102,28 @@ function FinalCTA({ onJoinWaitlist }: { onJoinWaitlist: (email: string, name: st
                 onChange={(e) => setName(e.target.value)}
                 required
               />
-              <div className="flex flex-col sm:flex-row gap-4">
-                <input
-                  type="email"
-                  placeholder="Tu correo profesional"
-                  className="flex-1 bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent block w-full p-4 outline-none transition-all"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap"
-                >
-                  Obtener acceso
-                </button>
-              </div>
+              <input
+                type="email"
+                placeholder="Tu correo profesional"
+                className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent block p-4 outline-none transition-all"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
+              >
+                <span>Obtener acceso</span>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </button>
             </form>
 
-            <p className="text-xs text-slate-400">
-              Al apuntarte, recibirás nuestra <strong>Guía Pro: Notas Clínicas en 5 Minutos</strong>. Sin spam, solo valor.
-            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center text-xs text-slate-400">
+              <span className="flex items-center gap-1.5"><CheckIcon className="w-3 h-3 text-teal-500"/> <span className="text-teal-600 font-semibold">Gratis</span></span>
+              <span className="flex items-center gap-1.5"><CheckIcon className="w-3 h-3 text-teal-500"/> <span className="text-teal-600 font-semibold">Sin tarjeta</span></span>
+              <span className="flex items-center gap-1.5"><CheckIcon className="w-3 h-3 text-teal-500"/> <span className="text-teal-600 font-semibold">Privacidad total</span></span>
+            </div>
           </div>
         </div>
       </RevealOnScroll>
@@ -1209,7 +1208,7 @@ function SurveyModal({ onClose, email, name }: { onClose: () => void; email: str
       question: "¿Cuál describe mejor tu perfil?",
       type: "single-choice",
       options: ["Psicólogo/a", "Psicoterapeuta", "Coach", "Psiquiatra", "Terapeuta (otra especialidad)", "Estudiante / en prácticas", "Otro"],
-      microcopy: `Gracias. ${displayName}. Esto nos ayuda a hablar tu mismo idioma.`
+      microcopy: `Gracias, ${displayName}. Esto nos ayuda a hablar tu mismo idioma.`
     },
     {
       id: 2,
@@ -1224,7 +1223,7 @@ function SurveyModal({ onClose, email, name }: { onClose: () => void; email: str
       type: "single-choice",
       options: ["1–5", "6–10", "11–20", "21–30", "30+"],
       microcopy: "Esto nos ayuda a diseñar Lysanna para tu ritmo real.",
-      encouragement: "Respira. Vamos bien."
+      encouragement: "Respira. No hay prisa."
     },
     {
       id: 4,
@@ -1240,7 +1239,7 @@ function SurveyModal({ onClose, email, name }: { onClose: () => void; email: str
       type: "single-choice",
       options: ["A mano / libreta", "Google Docs / Word", "Notion", "Excel", "Software de historia clínica / gestión (EHR/EMR)", "Lo tengo disperso / sin sistema fijo"],
       microcopy: "Lo estás haciendo bien. Y con Lysanna podrás centrarte solo en tu paciente."
-    },
+    , encouragement: "Estamos contigo"},
     {
       id: 6,
       question: "¿Qué resultado te gustaría conseguir primero con Lysanna?",
@@ -1290,7 +1289,51 @@ function SurveyModal({ onClose, email, name }: { onClose: () => void; email: str
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    // Prepare form data
+    const formData = {
+      email: email,
+      name: name,
+      answers: answers,
+      timestamp: new Date().toISOString(),
+      source: 'Espacio Seguro Form'
+    };
+
+    try {
+      // Option 1: Send to webhook (Zapier/Make.com)
+      const webhookUrl = 'https://hooks.zapier.com/hooks/catch/25900781/uw1gu9e/';
+      
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      // Option 2: Send to Formspree (uncomment and configure)
+      // await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formData)
+      // });
+
+      // Option 3: Send to your own API endpoint
+      // await fetch('https://your-api.com/api/submit-form', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formData)
+      // });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show thank you screen even if submission fails
+    }
+
     setCurrentStep(9); // Thank you screen
   };
 
@@ -1335,9 +1378,6 @@ function SurveyModal({ onClose, email, name }: { onClose: () => void; email: str
                 </p>
                 <p className="font-medium text-slate-800">
                   Este espacio es para ponerle palabras a lo que pesa.
-                </p>
-                <p>
-                  Tus respuestas no se pierden en un sistema. Forman parte de una misión: quitarte carga y devolverte presencia.
                 </p>
               </div>
 
